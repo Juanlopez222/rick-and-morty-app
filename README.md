@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick and Morty App
 
-## Getting Started
+Aplicación web desarrollada con **Next.js** (App Router) que consume la [Rick and Morty API](https://rickandmortyapi.com/documentation) para explorar personajes y episodios del universo de la serie.
 
-First, run the development server:
+Proyecto académico — curso de Desarrollo Web Híbridas (Ucompensar).
+
+## Características
+
+- **Layout general**: Navbar con menú de navegación, barra de búsqueda y Footer.
+- **Consumo de API**: integración con las secciones de **Personajes** y **Episodios**.
+- **Paginación**: navegación clásica entre páginas de resultados.
+- **Rutas dinámicas**: vista de detalle individual (`/characters/[id]`, `/episodes/[id]`).
+- **Filtros**: búsqueda de personajes por nombre, estado y género; búsqueda de episodios por nombre.
+- **Favoritos**: sistema para agregar/quitar personajes y episodios, persistido en `localStorage`.
+- **Diseño responsivo**: adaptado a móvil, tablet y escritorio.
+- **Server/Client Components**: separación optimizada aprovechando el App Router de Next.js.
+
+## Tecnologías
+
+- [Next.js](https://nextjs.org/) 16 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS
+
+## Instalación y ejecución local
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/Juanlopez222/rick-and-morty-app.git
+cd rick-and-morty-app
+
+# Instalar dependencias
+npm install
+
+# Levantar el servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build de producción
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Estructura del proyecto
+app/
+├─ characters/ # Listado y detalle de personajes
+├─ episodes/ # Listado y detalle de episodios
+├─ favorites/ # Página de favoritos
+├─ layout.tsx # Layout raíz (Navbar + Footer)
+└─ page.tsx # Página de inicio
 
-To learn more about Next.js, take a look at the following resources:
+components/
+├─ layout/ # Navbar, Footer, Searchbox
+└─ ui/ # Cards, filtros, paginación, botón de favoritos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+services/ # Funciones de consumo de la API
+hooks/ # Hook de favoritos (localStorage)
+types/ # Tipos TypeScript
+lib/ # Configuración base de fetch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## API utilizada
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[Rick and Morty API](https://rickandmortyapi.com/) — API pública y gratuita con información del universo de la serie.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Autor
+
+Juan Lopez — Ucompensar
